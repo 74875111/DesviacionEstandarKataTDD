@@ -22,5 +22,9 @@ class TestCalculadora(unittest.TestCase):
     def test_media_positivos_y_negativos(self):
         media=Media([-1, -2, 3, 4])
         self.assertEqual(media.calcularMedia(), 1)
+    def test_media_elementos_no_numericos(self):
+        media=Media([1, 'a', 3])
+        with self.assertRaises(TypeError):
+             media.calcularMedia()
 if __name__ == '__main__':
     unittest.main() 
