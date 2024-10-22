@@ -40,5 +40,9 @@ class TestCalculadora(unittest.TestCase):
     def test_desviacion_dos_elementos(self):
         desviacionEstandar=DesviacionEstandar([2, 4])
         self.assertAlmostEqual(desviacionEstandar.calcular(), 1.41, places=2)
+    def test_desviacion_n_elementos_positivos(self):
+        desviacionEstandar=DesviacionEstandar([1, 5, 8, 9])
+        self.assertAlmostEqual(desviacionEstandar.calcular(), 3.59, places=2)
+
 if __name__ == '__main__':
     unittest.main() 
