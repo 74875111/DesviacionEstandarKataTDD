@@ -7,3 +7,5 @@ class Media(Exception):
             raise NoSePuedeCalcular("No se puede calcular la media: la lista está vacía")
         elif (len(self.numeros)==1):
             return self.numeros[0]
+        else:
+            return sum(self.numeros)/len(self.numeros)
