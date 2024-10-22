@@ -49,5 +49,9 @@ class TestCalculadora(unittest.TestCase):
     def test_desviacion_positivos_y_negativos(self):
         desviacionEstandar=DesviacionEstandar([-1, -2, 3, 4])
         self.assertAlmostEqual(desviacionEstandar.calcular(), 2.94, places=2)
+    def test_desviacion_no_numerico_type_error(self):
+        desviacionEstandar=DesviacionEstandar([-1, "a", 4])
+        with self.assertRaises(TypeError):
+            desviacionEstandar.calcular()
 if __name__ == '__main__':
     unittest.main() 
