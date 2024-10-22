@@ -13,5 +13,8 @@ class TestCalculadora(unittest.TestCase):
     def test_dos_elementos_lista(self):
         media=Media([5,7])
         self.assertEqual(media.calcularMedia(),6)
+    def test_n_elementos_positivos(self):
+        media=Media([4,8,5,1])
+        self.assertEqual(media.calcularMedia(),4.5)
 if __name__ == '__main__':
     unittest.main() 
