@@ -16,5 +16,7 @@ class DesviacionEstandar():
     def calcular(self):
         if(len(self.numeros)==0):
             raise NoSePuedeCalcular("No se puede calcular la desviación estandar ya que la lista esta vacia")
+        elif(len(self.numeros)==1):
+            return 0
 
 
