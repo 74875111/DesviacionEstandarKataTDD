@@ -46,5 +46,8 @@ class TestCalculadora(unittest.TestCase):
     def test_desviacion_todos_ceros(self):
         desviacionEstandar=DesviacionEstandar([0,0,0,0])
         self.assertEqual(desviacionEstandar.calcular(), 0)
+    def test_desviacion_positivos_y_negativos(self):
+        desviacionEstandar=DesviacionEstandar([-1, -2, 3, 4])
+        self.assertAlmostEqual(desviacionEstandar.calcular(), 2.94, places=2)
 if __name__ == '__main__':
     unittest.main() 
