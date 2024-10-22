@@ -16,5 +16,8 @@ class TestCalculadora(unittest.TestCase):
     def test_n_elementos_positivos(self):
         media=Media([4,8,5,1])
         self.assertEqual(media.calcularMedia(),4.5)
+    def test_n_elementos_todos_cero(self):
+        media=Media([0,0,0,0,0])
+        self.assertEqual(media.calcularMedia(),0)
 if __name__ == '__main__':
     unittest.main() 
