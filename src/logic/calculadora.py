@@ -3,4 +3,7 @@ class Media(Exception):
     def __init__(self, numeros=[]):
         self.numeros = numeros
     def calcularMedia(self):
-        raise NoSePuedeCalcular("No se puede calcular la media: la lista está vacía")
+        if (len(self.numeros)==0):
+            raise NoSePuedeCalcular("No se puede calcular la media: la lista está vacía")
+        elif (len(self.numeros)==1):
+            return self.numeros[0]
