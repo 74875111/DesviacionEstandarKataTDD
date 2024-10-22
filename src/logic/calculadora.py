@@ -1,5 +1,5 @@
 from src.logic.exceptions import NoSePuedeCalcular
-class Media(Exception):
+class Media():
     def __init__(self, numeros=[]):
         self.numeros = numeros
     def calcularMedia(self):
@@ -9,3 +9,12 @@ class Media(Exception):
             return self.numeros[0]
         else:
             return sum(self.numeros)/len(self.numeros)
+
+class DesviacionEstandar():
+    def __init__(self, numeros=[]):
+        self.numeros = numeros
+    def calcular(self):
+        if(len(self.numeros)==0):
+            raise NoSePuedeCalcular("No se puede calcular la desviación estandar ya que la lista esta vacia")
+
+

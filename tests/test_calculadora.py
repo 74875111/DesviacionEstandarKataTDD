@@ -1,8 +1,10 @@
 import unittest
-from src.logic.calculadora import Media
+from src.logic.calculadora import Media,DesviacionEstandar
 from src.logic.exceptions import NoSePuedeCalcular
 
 class TestCalculadora(unittest.TestCase):
+
+    ##Test de la clase media
     def test_media_lista_vacia(self):
         media=Media([])
         with self.assertRaises(NoSePuedeCalcular):
@@ -26,5 +28,13 @@ class TestCalculadora(unittest.TestCase):
         media=Media([1, 'a', 3])
         with self.assertRaises(TypeError):
              media.calcularMedia()
+
+    ## Test de la clase Desviación estandar
+    def test_desviacion_lista_vacia(self):
+        desviacionEstandar=DesviacionEstandar([])
+        with self.assertRaises(NoSePuedeCalcular):
+            desviacionEstandar.calcular()
+
+    
 if __name__ == '__main__':
     unittest.main() 
