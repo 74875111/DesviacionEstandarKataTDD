@@ -1,27 +1,27 @@
 import math
 from src.logic.exceptions import NoSePuedeCalcular
 class Media():
-    def __init__(self, numeros=[]):
-        self.numeros = numeros
+    def __init__(self, elementos=[]):
+        self.elementos = elementos
     def calcularMedia(self):
-        if (len(self.numeros)==0):
+        if (len(self.elementos)==0):
             raise NoSePuedeCalcular("No se puede calcular la media: la lista está vacía")
-        elif (len(self.numeros)==1):
-            return self.numeros[0]
+        elif (len(self.elementos)==1):
+            return self.elementos[0]
         else:
-            return sum(self.numeros)/len(self.numeros)
+            return sum(self.elementos)/len(self.elementos)
 
 class DesviacionEstandar():
-    def __init__(self, numeros=[]):
-        self.numeros = numeros
+    def __init__(self, elementos=[]):
+        self.elementos = elementos
     def calcular(self):
-        if(len(self.numeros)==0):
+        if(len(self.elementos)==0):
             raise NoSePuedeCalcular("No se puede calcular la desviación estandar ya que la lista esta vacia")
-        elif(len(self.numeros)==1):
+        elif(len(self.elementos)==1):
             return 0
         else:
-            media=Media(self.numeros).calcularMedia()
-            suma_cuadrados = sum((x - media) ** 2 for x in self.numeros)
-            varianza=suma_cuadrados/(len(self.numeros)-1)
+            media=Media(self.elementos).calcularMedia()
+            suma_cuadrados = sum((x - media) ** 2 for x in self.elementos)
+            varianza=suma_cuadrados/(len(self.elementos)-1)
             return math.sqrt(varianza)
 
